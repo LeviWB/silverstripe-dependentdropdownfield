@@ -82,12 +82,7 @@ class DependentDropdownField extends DropdownField
             $source = call_user_func($this->source, $val);
             if($source instanceof SS_Map) $source = $source->toArray();
         }
-
-        if ($this->getHasEmptyDefault()) {
-            return array('' => $this->getEmptyString()) + (array) $source;
-        } else {
-            return $source;
-        }
+        return $source;
     }
 
     public function Field($properties = array())
